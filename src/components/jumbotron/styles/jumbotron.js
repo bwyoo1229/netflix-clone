@@ -76,7 +76,7 @@ export const Subtitle = styled.h2`
 `;
 
 export const Image = styled.img`
-  ${({ small }) => (small ? { 'max-width': '55%' } : { 'max-width': '100%' })}
+  ${({ small }) => (small ? { 'max-width': '45%' } : { 'max-width': '100%' })}
   z-index: 2;
 
   @media (max-width: 950px) {
