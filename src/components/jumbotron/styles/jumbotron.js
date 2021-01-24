@@ -48,41 +48,53 @@ export const Pane = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 50px;
+  font-size: 3.125rem;
   line-height: 1.1;
   margin-bottom: 8px;
 
-  @media (max-width: 600px) {
-    font-size: 35px;
+  @media (max-width: 950px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 1.625rem;
   }
 `;
 
 export const Subtitle = styled.h2`
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: normal;
   line-height: normal;
 
-  @media (max-width: 600px) {
-    font-size: 18px;
+  @media (max-width: 950px) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 1.125rem;
   }
 `;
 
 export const Image = styled.img`
+  ${({ small }) => (small ? { 'max-width': '55%' } : { 'max-width': '100%' })}
   z-index: 2;
-  max-width: 100%;
+
   @media (max-width: 950px) {
     max-width: 100%;
     padding: 0 45px;
-    text-align: center;
   }
 `;
 
 export const Video = styled.video`
   position: absolute;
-  margin-bottom: 1rem;
+  margin-top: -16px;
   max-width: 32%;
 
-  @media (max-width: 950px) {
-    max-width: 65%;
+  @media (min-width: 710px) and (max-width: 950px) {
+    max-width: 470px;
+  }
+
+  @media (max-width: 710px) {
+    max-width: 66%;
   }
 `;
