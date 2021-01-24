@@ -1,7 +1,5 @@
 // styled-compents/macro gives the component name (good to use :))
-import styled from 'styled-components/macro';
-
-export const Container = styled.div``;
+import styled from "styled-components/macro";
 
 export const Item = styled.div`
   display: flex;
@@ -9,6 +7,14 @@ export const Item = styled.div`
   padding: 50px 5%;
   color: white;
   overflow: hidden;
+`;
+
+export const Container = styled.div`
+  @media (max-width: 1000px) {
+    ${Item}:last-of-type h2 {
+      margin-bottom: 50px;
+    }
+  }
 `;
 
 export const Inner = styled.div`
@@ -44,6 +50,7 @@ export const Title = styled.h1`
     font-size: 35px;
   }
 `;
+
 export const Subtitle = styled.h2`
   font-size: 26px;
   font-weight: normal;

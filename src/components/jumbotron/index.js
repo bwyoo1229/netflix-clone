@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Container,
   Item,
@@ -7,17 +7,17 @@ import {
   Title,
   Subtitle,
   Image,
-} from './styles/jumbotron';
+} from "./styles/jumbotron";
 
 // for the compound components get children, specific prop you want and rest of the props
 export default function Jumbotron({
   children,
-  direction = 'row',
+  direction = "row",
   ...restProps
 }) {
   return (
-    <Item direction={direction}>
-      <Inner>{children}</Inner>
+    <Item {...restProps}>
+      <Inner direction={direction}>{children}</Inner>
     </Item>
   );
 }
