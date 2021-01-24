@@ -17,7 +17,11 @@ export default function JumbotronContainer() {
             <Jumbotron.Video autoPlay playsInline muted loop>
               <source src={item.video} type="video/mp4" />
             </Jumbotron.Video>
-            <Jumbotron.Image src={item.image} alt={item.alt} />
+            <Jumbotron.Image
+              src={item.image}
+              alt={item.alt}
+              small={JSON.parse(item.small)}
+            />
           </Jumbotron.Pane>
         </Jumbotron>
       ))}
