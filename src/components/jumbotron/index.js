@@ -7,6 +7,7 @@ import {
   Title,
   Subtitle,
   Image,
+  Video,
 } from './styles/jumbotron';
 
 // for the compound components get children, specific prop you want and rest of the props
@@ -38,6 +39,10 @@ Jumbotron.Subtitle = function JumbotronSubtitle({ children, ...restProps }) {
   return <Subtitle {...restProps}>{children}</Subtitle>;
 };
 
-Jumbotron.Image = function JumbotronImage({ children, ...restProps }) {
+Jumbotron.Image = function JumbotronImage({ ...restProps }) {
   return <Image {...restProps} />;
+};
+
+Jumbotron.Video = function JumbotronVideo({ children, ...restProps }) {
+  return <Video {...restProps}>{children}</Video>;
 };

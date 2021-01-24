@@ -1,5 +1,5 @@
 // styled-compents/macro gives the component name (good to use :))
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Item = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const Item = styled.div`
 `;
 
 export const Container = styled.div`
-  @media (max-width: 1000px) {
+  @media (max-width: 950px) {
     ${Item}:last-of-type h2 {
       margin-bottom: 50px;
     }
@@ -26,7 +26,7 @@ export const Inner = styled.div`
   margin: auto;
   width: 100%;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 950px) {
     flex-direction: column;
   }
 `;
@@ -34,7 +34,13 @@ export const Inner = styled.div`
 export const Pane = styled.div`
   width: 50%;
 
-  @media (max-width: 1000px) {
+  &:not(:first-child) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 950px) {
     width: 100%;
     padding: 0 45px;
     text-align: center;
@@ -61,4 +67,22 @@ export const Subtitle = styled.h2`
   }
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  z-index: 2;
+  max-width: 100%;
+  @media (max-width: 950px) {
+    max-width: 100%;
+    padding: 0 45px;
+    text-align: center;
+  }
+`;
+
+export const Video = styled.video`
+  position: absolute;
+  margin-bottom: 1rem;
+  max-width: 32%;
+
+  @media (max-width: 950px) {
+    max-width: 65%;
+  }
+`;
