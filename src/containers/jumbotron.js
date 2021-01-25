@@ -5,7 +5,7 @@ import { Jumbotron } from '../components/';
 export default function JumbotronContainer() {
   return (
     <Jumbotron.Container>
-      {jumboData.map((item) => (
+      {jumboData.map(item => (
         <Jumbotron key={item.id} direction={item.direction}>
           {/* left pane */}
           <Jumbotron.Pane>
