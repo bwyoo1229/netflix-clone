@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
@@ -88,6 +88,7 @@ export const Body = styled.div`
   background: #303030;
   padding: 1.5rem 2rem;
   white-space: pre-wrap;
+  word-break: keep-all;
 
   @media (max-width: 950px) {
     padding: 1.2rem 1.8rem;

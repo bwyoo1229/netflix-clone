@@ -1,5 +1,5 @@
 // styled-compents/macro gives the component name (good to use :))
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 export const Item = styled.div`
   display: flex;
@@ -51,6 +51,7 @@ export const Title = styled.h1`
   font-size: 3.125rem;
   line-height: 1.1;
   margin-bottom: 8px;
+  word-break: keep-all;
 
   @media (max-width: 950px) {
     font-size: 2.5rem;
@@ -65,6 +66,7 @@ export const Subtitle = styled.h2`
   font-size: 1.625rem;
   font-weight: normal;
   line-height: normal;
+  word-break: keep-all;
 
   @media (max-width: 950px) {
     font-size: 1.25rem;
@@ -75,12 +77,17 @@ export const Subtitle = styled.h2`
   }
 `;
 
+const mobileImg = css`
+  ${({ mobileImg }) =>
+    mobileImg ? { 'max-width': '45%' } : { 'max-width': '100%' }}
+`;
+
 export const Image = styled.img`
-  ${({ small }) => (small ? { 'max-width': '45%' } : { 'max-width': '100%' })}
   z-index: 2;
+  ${mobileImg}
 
   @media (max-width: 950px) {
-    max-width: 100%;
+    ${mobileImg}
     padding: 0 45px;
   }
 `;

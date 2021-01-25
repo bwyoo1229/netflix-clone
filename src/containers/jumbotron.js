@@ -20,7 +20,7 @@ export default function JumbotronContainer() {
             <Jumbotron.Image
               src={item.image}
               alt={item.alt}
-              small={JSON.parse(item.small)}
+              mobileImg={JSON.parse(item.small)}
             />
           </Jumbotron.Pane>
         </Jumbotron>
