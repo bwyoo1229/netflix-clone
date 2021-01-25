@@ -32,7 +32,7 @@ export default function FooterContainer(props) {
         </Footer.Column>
       </Footer.Row>
       <Footer.Break />
-      <Footer.Text>Netflix Souht Korea</Footer.Text>
+      <Footer.Text>Netflix South Korea</Footer.Text>
     </Footer>
   );
 }
