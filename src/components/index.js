@@ -5,3 +5,4 @@ export { default as Accordion } from './accordion';
 export { default as OptForm } from './opt-form';
 export { default as Footer } from './footer';
 export { Disclaimer } from './feature/styles/feature.js';
+export { default as Form } from './form';
