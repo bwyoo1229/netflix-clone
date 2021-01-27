@@ -14,16 +14,13 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // Quick valdiation about email address and password on the client side
-  const isInvalid = password === '' || emailAddress === '';
-
-  const handleSignIn = e => {
-    e.preventDefault();
+  const handleSignIn = event => {
+    event.preventDefault();
 
     // Language code to Korean
     firebase.auth().languageCode = 'ko';
 
-    // firebase auth
+    // firebase auth sign-in
     firebase
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
@@ -46,7 +43,7 @@ export default function SignIn() {
           {error && <Form.Error>{error}</Form.Error>}
           <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
-              placeholder="이메일 주소 또는 전화번호"
+              placeholder="이메일 주소"
               value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)}
             />
@@ -57,15 +54,13 @@ export default function SignIn() {
               value={password}
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit">
-              로그인
-            </Form.Submit>
+            <Form.Submit type="submit">로그인</Form.Submit>
           </Form.Base>
           <Form.Text>
             Netflix 회원이 아닌가요?{' '}
-            <Form.SignUpLink to={ROUTES.SIGN_UP}>
+            <Form.AuthFormLink to={ROUTES.SIGN_UP}>
               지금 가입하세요.
-            </Form.SignUpLink>
+            </Form.AuthFormLink>
           </Form.Text>
           <Form.TextSmall>
             이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을

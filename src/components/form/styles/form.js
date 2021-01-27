@@ -65,7 +65,7 @@ export const TextSmall = styled.p`
   color: #8c8c8c;
 `;
 
-export const SignUpLink = styled(Link)`
+export const AuthFormLink = styled(Link)`
   color: white;
   text-decoration: none;
 

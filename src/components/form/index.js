@@ -6,7 +6,7 @@ import {
   Title,
   Text,
   TextSmall,
-  SignUpLink,
+  AuthFormLink,
   Input,
   Submit,
 } from './styles/form';
@@ -35,8 +35,8 @@ Form.TextSmall = function FormTextSmall({ children, ...restProps }) {
   return <TextSmall {...restProps}>{children}</TextSmall>;
 };
 
-Form.SignUpLink = function FormSignUpLink({ children, ...restProps }) {
-  return <SignUpLink {...restProps}>{children}</SignUpLink>;
+Form.AuthFormLink = function FormAuthFormLink({ children, ...restProps }) {
+  return <AuthFormLink {...restProps}>{children}</AuthFormLink>;
 };
 
 Form.Input = function FormInput({ children, ...restProps }) {
