@@ -1,23 +1,50 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { Home, Browse, SignIn, SignUp } from './pages';
 import { ROUTES } from './constants/routes';
+import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 
 export default function App() {
+  const user = 'a';
   return (
     <BrowserRouter>
-      <Route exact path={ROUTES.HOME}>
-        <Home />
-      </Route>
-      <Route exact path={ROUTES.BROWSE}>
-        <Browse />
-      </Route>
-      <Route exact path={ROUTES.SIGN_IN}>
-        <SignIn />
-      </Route>
-      <Route exact path={ROUTES.SIGN_UP}>
-        <SignUp />
-      </Route>
+      <Switch>
+        {/* Home */}
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.HOME}
+        >
+          <Home />
+        </IsUserRedirect>
+
+        {/* SignIn */}
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.SIGN_IN}
+        >
+          <SignIn />
+        </IsUserRedirect>
+
+        {/* SignUp */}
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.SIGN_UP}
+        >
+          <SignUp />
+        </IsUserRedirect>
+
+        {/* Browse */}
+        <ProtectedRoute user={user} exact path={ROUTES.BROWSE}>
+          <Browse />
+        </ProtectedRoute>
+        <div>404 Error: Page Not Found</div>
+      </Switch>
     </BrowserRouter>
   );
 }
