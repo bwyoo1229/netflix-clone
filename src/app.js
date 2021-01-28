@@ -5,7 +5,7 @@ import { ROUTES } from './constants/routes';
 import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 
 export default function App() {
-  const user = 'a';
+  const user = '';
   return (
     <BrowserRouter>
       <Switch>
