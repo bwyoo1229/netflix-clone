@@ -6,6 +6,7 @@ import { ROUTES } from '../constants/routes';
 import logo from '../logo.svg';
 
 export default function BrowseContainer({ slides }) {
+  const [searchTerm, setSearchTerm] = useState('');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const firebase = useContext(FirebaseContext);
@@ -28,6 +29,10 @@ export default function BrowseContainer({ slides }) {
             <Header.TextLink>영화</Header.TextLink>
           </Header.Group>
           <Header.Group>
+            <Header.Search
+              searchTerm={searchTerm}
+              setSeartchTerm={setSearchTerm}
+            />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
@@ -49,11 +54,11 @@ export default function BrowseContainer({ slides }) {
           <Header.Text>
             고담시의 광대 아서 플렉은 코미디언을 꿈꾸는 남자. 하지만 모두가
             미쳐가는 코미디 같은 세상에서 맨 정신으로는 그가 설 자리가 없음을
-            깨닫게 되는데…
+            깨닫게 된다.
           </Header.Text>
+          <Header.PlayButton>재생</Header.PlayButton>
         </Header.Feature>
       </Header>
-      ㄴ
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
