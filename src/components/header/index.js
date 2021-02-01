@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Background, Container, Logo, ButtonLink } from './styles/header';
+import {
+  Background,
+  Container,
+  Logo,
+  ButtonLink,
+  Frame,
+} from './styles/header';
 
 export default function Header({ background = true, children, ...restProps }) {
   return background ? (
