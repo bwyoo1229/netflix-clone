@@ -15,6 +15,7 @@ export const Title = styled.h1`
   font-size: 48px;
   text-align: center;
   font-weight: 500;
+  word-break: keep-all;
 `;
 
 export const List = styled.ul`

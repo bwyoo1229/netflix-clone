@@ -61,10 +61,6 @@ export const TextLink = styled.p`
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
   cursor: pointer;
 
-  &:hover {
-    font-weight: bold;
-  }
-
   &:last-of-type {
     margin-right: 0;
   }
@@ -215,7 +211,7 @@ export const PlayButton = styled.button`
   margin-top: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
   outline: none;
 
   &:hover {
