@@ -60,6 +60,7 @@ export const TextLink = styled.p`
   margin-right: 30px;
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
   cursor: pointer;
+  word-break: keep-all;
 
   &:last-of-type {
     margin-right: 0;
