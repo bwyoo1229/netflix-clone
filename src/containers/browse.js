@@ -5,6 +5,7 @@ import { Loading, Header, Card, Player } from '../components';
 import { ROUTES } from '../constants/routes';
 import logo from '../logo.svg';
 import FooterContainer from '../containers/footer';
+import Fuse from 'fuse.js';
 
 export default function BrowseContainer({ slides }) {
   const [category, setCategory] = useState('series');
@@ -25,6 +26,22 @@ export default function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  // Search
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre'],
+    });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length) {
+      setSlideRows(results);
+    } else {
+      setSlideRows(slides[category]);
+    }
+    // Don't include slideRows in deps.
+    // Fuse will change slideRows and change will fire useEffect causing recursion error
+  }, [searchTerm]);
 
   return profile.displayName ? (
     <>
@@ -49,7 +66,7 @@ export default function BrowseContainer({ slides }) {
           <Header.Group>
             <Header.Search
               searchTerm={searchTerm}
-              setSeartchTerm={setSearchTerm}
+              setSearchTerm={setSearchTerm}
             />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
