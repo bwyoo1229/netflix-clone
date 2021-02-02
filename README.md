@@ -9,7 +9,6 @@ Test 진행중인 프로젝트입니다.
 진행 현황에 대해선 아래 '구현할 기능'의 현황을 참고해주세요 :)
 ```
 
-<br>
 [데모 플레이](https://bwyoo1229.github.io/netflix-clone/)
 <br>
 
