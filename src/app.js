@@ -9,7 +9,7 @@ export default function App() {
   const user = useAuthListener();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/netflix-clone/">
       <Switch>
         {/* Home */}
         <IsUserRedirect
